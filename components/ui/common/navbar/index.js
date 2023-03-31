@@ -1,11 +1,11 @@
 import { useWeb3 } from "@components/providers"
 import Link from "next/link"
 import { Button } from "@components/ui/common"
-import { useAccount } from "@components/hooks/web3/useAccount"
 import { useRouter } from "next/router"
+import { useAccount } from "@components/hooks/web3"
 
 export default function Navbar() {
-    const { connect, isLoading, isWeb3Loaded } = useWeb3()
+    const { connect, isLoading, requireInstall } = useWeb3()
     const { account } = useAccount()
     const { pathname } = useRouter()
 
@@ -16,7 +16,7 @@ export default function Navbar() {
                     <div className="flex justify-between">
                         <div className="py-3">
                             <Link href="/" className="font-medium mr-8 text-gray-500 hover:text-gray-900">
-                                Product
+                                Home
                             </Link>
                             <Link href="/marketplace" className="font-medium mr-8 text-gray-500 hover:text-gray-900">
                                 Marketplace
@@ -33,8 +33,11 @@ export default function Navbar() {
                                 <Button disabled={true} onClick={connect}>
                                     Loading...
                                 </Button>
-                                : isWeb3Loaded ?
-                                    account.data ?
+                                : requireInstall ?
+                                    <Button onClick={() => window.open("https://metamask.io/download.html", "_blank")}>
+                                        Install Metamask
+                                    </Button>
+                                    : account.data ?
                                         <Button hoverable={false} className="cursor-default">
                                             Hi there {account.isAdmin && "Admin"}
                                         </Button>
@@ -42,10 +45,6 @@ export default function Navbar() {
                                         <Button onClick={connect}>
                                             Connect Wallet
                                         </Button>
-                                    :
-                                    <Button onClick={() => window.open("https://metamask.io/download.html", "_blank")}>
-                                        Install Metamask
-                                    </Button>
                             }
                         </div>
                     </div>

@@ -1,6 +1,5 @@
 // commponent
-import { useAccount } from "@components/hooks/web3/useAccount"
-import { useNetwork } from "@components/hooks/web3/useNetwork"
+import { useAccount, useNetwork } from "@components/hooks/web3"
 import { CourseCard, CourseList } from "@components/ui/course"
 import { BaseLayout } from "@components/ui/layout"
 import { Walletbar } from "@components/ui/web3"
@@ -16,15 +15,20 @@ export default function Home({ courses }) {
             <div className="py-4">
                 <Walletbar
                     address={account.data}
-                    network={network.data}
+                    network={{
+                        data: network.data,
+                        target: network.target,
+                        isSupported: network.isSupported,
+                        hasInitialResponse: network.hasInitialResponse
+                    }}
                 />
-                <CourseList courses={courses}>
-                    {
-                        course =>
-                            <CourseCard key={course.id} course={course} />
-                    }
-                </CourseList>
             </div>
+            <CourseList courses={courses}>
+                {
+                    course =>
+                        <CourseCard key={course.id} course={course} />
+                }
+            </CourseList>
         </>
     )
 }
