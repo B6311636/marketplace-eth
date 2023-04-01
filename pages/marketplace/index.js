@@ -1,34 +1,48 @@
 // commponent
-import { useAccount, useNetwork } from "@components/hooks/web3"
+import { useWalletInfo } from "@components/hooks/web3"
+import { Button } from "@components/ui/common"
 import { CourseCard, CourseList } from "@components/ui/course"
 import { BaseLayout } from "@components/ui/layout"
-import { Walletbar } from "@components/ui/web3"
+import { MarketHeader } from "@components/ui/marketplace"
+import { OrderModel } from "@components/ui/order"
 import { getAllCourse } from "@content/courses/fetcher"
+import { useState } from "react"
 
 
-export default function Home({ courses }) {
-    const { account } = useAccount()
-    const { network } = useNetwork()
+export default function Marketplace({ courses }) {
+    const [selectedCoruse, setSelectedCourse] = useState(null)
+    const { canPurchaseCourse } = useWalletInfo()
 
     return (
         <>
-            <div className="py-4">
-                <Walletbar
-                    address={account.data}
-                    network={{
-                        data: network.data,
-                        target: network.target,
-                        isSupported: network.isSupported,
-                        hasInitialResponse: network.hasInitialResponse
-                    }}
-                />
-            </div>
+            <MarketHeader />
             <CourseList courses={courses}>
                 {
                     course =>
-                        <CourseCard key={course.id} course={course} />
+                        <CourseCard
+                            disabled={!canPurchaseCourse}
+                            key={course.id}
+                            course={course}
+                            Footer={() =>
+                                <div className="mt-4">
+                                    <Button
+                                        disabled={!canPurchaseCourse}
+                                        variant="lightPurple"
+                                        onClick={() => setSelectedCourse(course)}
+                                    >
+                                        Purchase
+                                    </Button>
+                                </div>
+                            }
+                        />
                 }
             </CourseList>
+            {selectedCoruse &&
+                <OrderModel
+                    course={selectedCoruse}
+                    onClose={() => setSelectedCourse(null)}
+                />
+            }
         </>
     )
 }
@@ -42,4 +56,4 @@ export function getStaticProps() {
     }
 }
 
-Home.Layout = BaseLayout
+Marketplace.Layout = BaseLayout

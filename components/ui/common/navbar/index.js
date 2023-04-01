@@ -1,8 +1,8 @@
 import { useWeb3 } from "@components/providers"
-import Link from "next/link"
-import { Button } from "@components/ui/common"
+import { ActiveLink, Button } from "@components/ui/common"
 import { useRouter } from "next/router"
 import { useAccount } from "@components/hooks/web3"
+import Link from "next/link"
 
 export default function Navbar() {
     const { connect, isLoading, requireInstall } = useWeb3()
@@ -15,20 +15,20 @@ export default function Navbar() {
                 <nav className="relative" aria-label="Global">
                     <div className="flex justify-between">
                         <div className="py-3">
-                            <Link href="/" className="font-medium mr-8 text-gray-500 hover:text-gray-900">
+                            <ActiveLink href="/" className="font-medium mr-8 text-gray-500 hover:text-gray-900">
                                 Home
-                            </Link>
-                            <Link href="/marketplace" className="font-medium mr-8 text-gray-500 hover:text-gray-900">
+                            </ActiveLink>
+                            <ActiveLink href="/marketplace" className="font-medium mr-8 text-gray-500 hover:text-gray-900">
                                 Marketplace
-                            </Link>
-                            <Link href="/" className="font-medium mr-8 text-gray-500 hover:text-gray-900">
-                                Features
-                            </Link>
+                            </ActiveLink>
+                            <ActiveLink href="/blogs" className="font-medium mr-8 text-gray-500 hover:text-gray-900">
+                                Blogs
+                            </ActiveLink>
                         </div>
                         <div>
-                            <Link href="/" className="font-medium mr-8 text-gray-500 hover:text-gray-900">
+                            <ActiveLink href="/wishlist" className="font-medium mr-8 text-gray-500 hover:text-gray-900">
                                 Wishlist
-                            </Link>
+                            </ActiveLink>
                             {isLoading ?
                                 <Button disabled={true} onClick={connect}>
                                     Loading...
