@@ -1,4 +1,3 @@
-import Link from "next/link";
 import ActiveLink from "../link";
 
 export default function Breadcrumbs({ items }) {

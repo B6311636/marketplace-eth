@@ -13,6 +13,10 @@ export default function Marketplace({ courses }) {
     const [selectedCoruse, setSelectedCourse] = useState(null)
     const { canPurchaseCourse } = useWalletInfo()
 
+    const purchaseCourse = (order) => {
+        alert(JSON.stringify(order))
+    }
+
     return (
         <>
             <MarketHeader />
@@ -40,6 +44,7 @@ export default function Marketplace({ courses }) {
             {selectedCoruse &&
                 <OrderModel
                     course={selectedCoruse}
+                    onSubmit={purchaseCourse}
                     onClose={() => setSelectedCourse(null)}
                 />
             }
