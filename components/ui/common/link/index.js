@@ -15,5 +15,3 @@ export default function ActiveLink({ children, href, className }) {
         </Link>
     )
 }
-
-// for imprement leter
