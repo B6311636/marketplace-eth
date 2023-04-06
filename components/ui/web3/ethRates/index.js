@@ -12,12 +12,12 @@ export default function EthRates() {
                     <div className="flex items-center">
                         {eth.data ?
                             <>
-                                <Image
+                                {/* <Image
                                     layout="fixed"
                                     height="35"
                                     width="35"
                                     src="/small-eth.webp"
-                                />
+                                /> */}
                                 <span className="text-2xl font-bold">
                                     ETH = {eth.data.toLocaleString()} ฿
                                 </span>
@@ -38,12 +38,12 @@ export default function EthRates() {
                                 <span className="text-2xl font-bold">
                                     {eth.perItem}
                                 </span>
-                                <Image
+                                {/* <Image
                                     layout="fixed"
                                     height="35"
                                     width="35"
                                     src="/eth-logo-clipart-3.jpg"
-                                />
+                                /> */}
                                 <span className="text-2xl font-bold">
                                     = {COUSE_PRICE} ฿
                                 </span>
