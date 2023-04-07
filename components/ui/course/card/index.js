@@ -19,11 +19,11 @@ export default function CourseCard({ course, disabled, Footer }) {
                     <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
                         {course.type}
                     </div>
-                    <Link href={`/courses/${course.slug}`} className="h-12 block mt-1 text-lg leading-tight font-medium text-black hover:underline">
+                    <Link href={`/courses/${course.slug}`} className="h-12 block mt-1 text-sm sm:text-lg leading-tight font-medium text-black hover:underline">
                         {course.title}
                     </Link>
 
-                    <p className="mt-2 text-gray-500">
+                    <p className="mt-2 text-sm sm:text-base text-gray-500">
                         {course.description.substring(0,70)}...
                     </p>
                     {

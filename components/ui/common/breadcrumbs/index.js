@@ -3,7 +3,7 @@ import ActiveLink from "../link";
 export default function Breadcrumbs({ items }) {
 
     return (
-        <div className="flex flex-row-reverse py-4 px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-row-reverse p-4 sm:px-6 lg:px-8">
             <nav aria-label="breadcrumb">
                 <ol className="flex leading-none text-indigo-600 divide-x divide-indigo-400">
                     {items.map((item, i) =>
