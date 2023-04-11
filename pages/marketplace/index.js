@@ -6,7 +6,7 @@ import { CourseCard, CourseList } from "@components/ui/course"
 import { BaseLayout } from "@components/ui/layout"
 import { MarketHeader } from "@components/ui/marketplace"
 import { OrderModel } from "@components/ui/order"
-import { getAllCourse } from "@content/courses/fetcher"
+import { getAllCourses } from "@content/courses/fetcher"
 import { useState } from "react"
 
 
@@ -18,22 +18,15 @@ export default function Marketplace({ courses }) {
 
     const purchaseCourse = async order => {
         const hexCourseId = web3.utils.utf8ToHex(selectedCourse.id)
-        console.log(hexCourseId)
-
         const orderHash = web3.utils.soliditySha3(
             { type: "bytes16", value: hexCourseId },
             { type: "address", value: account.data }
         )
-        console.log(orderHash)
-
         const emailHash = web3.utils.sha3(order.email)
-        console.log(emailHash)
-
         const proof = web3.utils.soliditySha3(
             { type: "bytes32", value: emailHash },
             { type: "bytes32", value: orderHash }
         )
-        console.log(proof)
 
         const value = web3.utils.toWei(String(order.price))
 
@@ -84,7 +77,7 @@ export default function Marketplace({ courses }) {
 }
 
 export function getStaticProps() {
-    const { data } = getAllCourse()
+    const { data } = getAllCourses()
     return {
         props: {
             courses: data

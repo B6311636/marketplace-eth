@@ -1,4 +1,4 @@
-import ActiveLink from "../link";
+import ActiveLink from "../link"
 
 export default function Breadcrumbs({ items }) {
 

@@ -39,7 +39,7 @@ contract CourseMarketplace {
 
     modifier onlyOwner() {
         if (msg.sender != getContractOwner()) {
-        revert OnlyOwner();
+            revert OnlyOwner();
         }
         _;
     }
@@ -61,11 +61,11 @@ contract CourseMarketplace {
 
         ownedCourseHash[id] = courseHash;
         ownedCourses[courseHash] = Course({
-        id: id,
-        price: msg.value,
-        proof: proof,
-        owner: msg.sender,
-        state: State.Purchased
+            id: id,
+            price: msg.value,
+            proof: proof,
+            owner: msg.sender,
+            state: State.Purchased
         });
     }
 
