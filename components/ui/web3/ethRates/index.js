@@ -18,7 +18,7 @@ export default function EthRates() {
                                 src="/small-eth.webp"
                             /> */}
                             <span className="text-xl font-bold">
-                                ETH = {eth.data.toLocaleString()} ฿
+                                ETH = {eth.data} ฿
                             </span>
                         </> :
                         <div className="w-full flex justify-center">
@@ -42,7 +42,7 @@ export default function EthRates() {
                                 src="/small-eth.webp"
                             /> */}
                             <span className="text-xl font-bold">
-                                = {COURSE_PRICE} ฿
+                                &nbsp;= {COURSE_PRICE} ฿
                             </span>
                         </> :
                         <div className="w-full flex justify-center">

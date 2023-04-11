@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function CourseCard({ course, disabled, Footer }) {
     return (
-        <div key={course.id} className="bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+        <div className="bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
             <div className="flex h-full">
                 <div className="flex-1 h-full next-image-wrapper">
                     <Image
@@ -15,7 +15,7 @@ export default function CourseCard({ course, disabled, Footer }) {
                         alt={course.title}
                     />
                 </div>
-                <div className="p-8 flex-2">
+                <div className="p-8 pb-4 flex-2">
                     <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
                         {course.type}
                     </div>

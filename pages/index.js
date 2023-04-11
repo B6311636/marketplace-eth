@@ -6,7 +6,7 @@ import { CourseCard, CourseList } from "@components/ui/course"
 import { BaseLayout } from "@components/ui/layout"
 import { OrderCard } from "@components/ui/order"
 import { EthRates, Walletbar } from "@components/ui/web3"
-import { getAllCourse } from "@content/courses/fetcher"
+import { getAllCourses } from "@content/courses/fetcher"
 
 export default function Home({ courses }) {
   const { account } = useAccount()
@@ -28,7 +28,7 @@ export default function Home({ courses }) {
 }
 
 export function getStaticProps() {
-  const { data } = getAllCourse()
+  const { data } = getAllCourses()
   return {
     props: {
       courses: data

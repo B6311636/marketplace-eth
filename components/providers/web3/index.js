@@ -34,7 +34,7 @@ export default function Web3Provider({ children }) {
             if (provider) {
                 const web3 = new Web3(provider)
                 const contract = await loadContract("CourseMarketplace", web3)
-                console.log(contract)
+
                 setWeb3Api(
                     createWeb3State({
                         web3,
@@ -60,7 +60,7 @@ export default function Web3Provider({ children }) {
             connect: provider ?
                 async () => {
                     try {
-                        await web3Api.provider.request({ method: "eth_requestAccounts" })
+                        await provider.request({ method: "eth_requestAccounts" })
                     } catch {
                         location.reload()
                     }
