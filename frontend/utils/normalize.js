@@ -5,7 +5,7 @@ export const COURSE_STATES = {
 }
 
 
-export const normallizeOwnedCourse = web3 => (course, ownedCourse) => {
+export const normalizeOwnedCourse = web3 => (course, ownedCourse) => {
     return {
         ...course,
         ownedCourseId: ownedCourse.id,
