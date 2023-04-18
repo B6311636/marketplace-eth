@@ -20,6 +20,11 @@ export default function Navbar() {
                             <ActiveLink href="/marketplace" className="font-medium mr-8 text-gray-500 hover:text-gray-900">
                                 Marketplace
                             </ActiveLink>
+                            {account.isAdmin &&
+                                <ActiveLink href="/addcourses" className="font-medium mr-8 text-gray-500 hover:text-gray-900">
+                                    Add Course
+                                </ActiveLink>
+                            }
                             <ActiveLink href="/blogs" className="font-medium mr-8 text-gray-500 hover:text-gray-900">
                                 Blogs
                             </ActiveLink>

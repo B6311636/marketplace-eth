@@ -4,7 +4,7 @@ import { useState } from "react"
 const TYPES = {
     success: "green",
     warning: "yellow",
-    danger: "red"
+    danger: "red",
 }
 
 export default function Message({ children, type = "success" }) {
