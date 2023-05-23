@@ -8,6 +8,7 @@ import { BaseLayout } from "@components/ui/layout";
 import { MarketHeader } from "@components/ui/marketplace";
 import { normalizeOwnedCourse } from "@utils/normalize";
 import { useEffect, useState } from "react";
+import { withToast } from "@utils/toast";
 
 const VerificationInput = ({ onVerify }) => {
     const [email, setEmail] = useState("")
@@ -65,21 +66,21 @@ export default function ManagedCourses() {
 
     const changeCourseState = async (courseHash, method) => {
         try {
-            await contract.methods[method](courseHash)
+            const result = await contract.methods[method](courseHash)
                 .send({
                     from: account.data
                 })
         } catch (e) {
-            console.error(e.message)
+            throw new Error(e.message)
         }
     }
 
     const activateCourse = async courseHash => {
-        changeCourseState(courseHash, "activateCourse")
+        withToast(changeCourseState(courseHash, "activateCourse"))
     }
 
     const deactivateCourse = async courseHash => {
-        changeCourseState(courseHash, "deactivateCourse")
+        withToast(changeCourseState(courseHash, "deactivateCourse"))
     }
 
     const searchCourse = async hash => {
@@ -163,7 +164,7 @@ export default function ManagedCourses() {
         <>
             <MarketHeader />
             <CourseFilter
-                onSearchSubmit = {searchCourse}
+                onSearchSubmit={searchCourse}
                 onFilterSelect={(value) => setFilters({ state: value })}
             />
             <section className="grid grid-cols-1">
