@@ -1,0 +1,91 @@
+
+https://sepolia.infura.io/v3/90dc236a6a174e6092652ca5d43a72d2
+
+``` reference
+blockchain : {
+	en : "https://en.wikipedia.org/wiki/Blockchain",
+	th : {
+		1 : "https://www.bitkub.com/th/blog/what-is-blockchain-61fa068b1001",
+		2 : "https://th.wikipedia.org/wiki/%E0%B8%9A%E0%B8%A5%E0%B9%87%E0%B8%AD%E0%B8%81%E0%B9%80%E0%B8%8A%E0%B8%99"
+	}
+	simulator blockchain : "https://andersbrownworth.com/blockchain/blockchain"
+}
+smartcontract : {
+	en : "https://en.wikipedia.org/wiki/Smart_contract",
+	th : {
+		1 : "https://support.bitkub.com/th/support/solutions/articles/151000034908",
+		2 : "https://siamblockchain.com/2017/06/08/smart-contract-%e0%b8%84%e0%b8%b7%e0%b8%ad%e0%b8%ad%e0%b8%b0%e0%b9%84%e0%b8%a3/",
+	}
+}
+ethereum : {
+	https://ethereum.org/en/developers/docs/
+	-introduce : "https://ethereum.org/en/developers/docs/intro-to-ethereum/",
+	-evm : "https://ethereum.org/en/developers/docs/evm/",
+	-dapps : "https://ethereum.org/en/developers/docs/dapps/",
+	-web2 to web3 : "https://ethereum.org/en/developers/docs/web2-vs-web3/"
+
+	consensus machanisms : "https://ethereum.org/en/developers/docs/consensus-mechanisms/"
+	-PoW, PoS
+
+	history : "https://ethereum.org/th/history/"
+
+	white paper : {
+		web page : "https://ethereum.org/th/whitepaper/",
+		PDF : "https://ethereum.org/669c9e2e2027310b6b3cdce6e1c52962/Ethereum_Whitepaper_-_Buterin_2014.pdf"
+	}
+}
+solidity : {
+	doc v0.8.19 : "https://docs.soliditylang.org/en/v0.8.19/",
+	github : "https://github.com/ethereum/solidity"
+}
+web3.storage (ipfs) : {
+	ipfs doc : "https://docs.ipfs.tech/concepts/ipfs-gateway/#gateway-types",
+	pinata doc: "https://web3.storage/docs/how-tos/w3name/"
+}
+tailwind : {
+	doc : "https://tailwindui.com/documentation"
+	web page : "https://tailwindui.com/"
+}
+next js : {
+	doc : "https://nextjs.org/docs",
+	web page : "https://nextjs.org/"
+}
+metamask : {
+	doc : "https://docs.metamask.io/wallet/"
+}
+truffle : {
+	doc : "https://trufflesuite.com/docs/truffle/quickstart/"
+	web page : "https://trufflesuite.com/"
+	ganache : {
+		web page : "https://trufflesuite.com/ganache/",
+		doc : "https://trufflesuite.com/docs/ganache/",
+		github : "https://github.com/trufflesuite/ganache-ui"
+	}
+}
+infura : {
+	doc : "https://docs.infura.io/infura/"
+	web page : "https://www.infura.io/"
+}
+sepolia testnet : {
+	github : "https://github.com/eth-clients/sepolia"
+	faucet : {
+		1 : "https://faucet.sepolia.dev/", //wait for test faucet
+	}
+	scan : {
+		Ethersacn : "https://sepolia.etherscan.io/",
+		Otterscan : "https://sepolia.otterscan.io/"
+	}
+}
+web3.js : {
+	github : "https://github.com/web3/web3.js",
+	web page : "https://web3js.readthedocs.io/en/v1.7.5/index.html"
+}
+package: {
+	@truffle/hdwallet-provider : "https://www.npmjs.com/package/@truffle/hdwallet-provider",
+	@metamask/detect-provider : "https://www.npmjs.com/package/@metamask/detect-provider",
+	@heroicons/react : "https://heroicons.com/"
+}
+project : {
+	dappazon : "https://github.com/dappuniversity/dappazon",
+	course market place : "https://github.com/Jerga99/eth-marketplace-course"
+}
